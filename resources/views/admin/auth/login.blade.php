@@ -12,14 +12,14 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('admin.login') }}">
             @csrf
 
-            <!-- Email Address -->
+            <!-- Identity -->
             <div>
-                <x-label for="user_id" :value="__('user_id')" />
+                <x-label for="identity" :value="__('Admin Email or Username')" />
 
-                <x-input id="user_id" class="block mt-1 w-full" type="input" name="user_id" :value="old('user_id')" required autofocus />
+                <x-input id="email" class="block mt-1 w-full" type="text" name="identity" :value="old('email')" required autofocus />
             </div>
 
             <!-- Password -->
@@ -41,8 +41,8 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                @if (Route::has('admin.password.request'))
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('admin.password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
