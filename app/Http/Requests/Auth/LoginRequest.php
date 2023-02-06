@@ -45,7 +45,11 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
+<<<<<<< HEAD
         if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+=======
+        if (!Auth::attempt($this->only('user_id', 'password'), $this->boolean('remember'))) {
+>>>>>>> version01
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
@@ -88,6 +92,10 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey()
     {
+<<<<<<< HEAD
         return Str::lower($this->input('email')).'|'.$this->ip();
+=======
+        return Str::lower($this->input('user_id')) . '|' . $this->ip();
+>>>>>>> version01
     }
 }
