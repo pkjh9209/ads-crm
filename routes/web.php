@@ -21,9 +21,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-
-<<<<<<< HEAD
-
 Route::namespace('Admin')->group(function () {
     Route::prefix('admin')->group(function () {
         //로그인
@@ -44,10 +41,5 @@ Route::namespace('Admin')->group(function () {
         Route::post('password/reset', 'ResetPasswordController@reset')->name('admin.password.update');
     });
 });
-=======
-Route::get('/admin', function () {
-    return view('admin.admin-login');
-})->middleware(['auth'])->name('admin');
->>>>>>> master
 
 require __DIR__ . '/auth.php';
