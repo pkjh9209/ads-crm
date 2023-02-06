@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/dashboard', function () {
@@ -22,6 +22,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
+<<<<<<< HEAD
 
 Route::namespace('Admin')->group(function () {
     Route::prefix('admin')->group(function () {
@@ -43,5 +44,10 @@ Route::namespace('Admin')->group(function () {
         Route::post('password/reset', 'ResetPasswordController@reset')->name('admin.password.update');
     });
 });
+=======
+Route::get('/admin', function () {
+    return view('admin.admin-login');
+})->middleware(['auth'])->name('admin');
+>>>>>>> master
 
 require __DIR__ . '/auth.php';
