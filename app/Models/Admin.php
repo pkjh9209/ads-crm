@@ -33,4 +33,6 @@ class Admin extends Authenticatable
         'adm_password',
 
     ];
+
+    protected $casts = [];
 }
