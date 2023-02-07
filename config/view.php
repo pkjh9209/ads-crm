@@ -1,5 +1,10 @@
 <?php
 
+use Jenssegers\Agent\Facades\Agent;
+
+$Agent = new Agent();
+
+
 return [
 
     /*
