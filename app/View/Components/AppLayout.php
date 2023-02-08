@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Http\Controllers\Controller;
 
 class AppLayout extends Component
 {
@@ -13,6 +14,7 @@ class AppLayout extends Component
      */
     public function render()
     {
-        return view('layouts.app');
+        $agentPath = Controller::agent();
+        return view($agentPath . 'layouts.app');
     }
 }

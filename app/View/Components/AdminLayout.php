@@ -5,7 +5,7 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 use App\Http\Controllers\Controller;
 
-class GuestLayout extends Component
+class AdminLayout extends Component
 {
     /**
      * Get the view / contents that represents the component.
@@ -15,6 +15,6 @@ class GuestLayout extends Component
     public function render()
     {
         $agentPath = Controller::agent();
-        return view($agentPath . 'layouts.guest');
+        return view($agentPath . 'layouts.admin');
     }
 }

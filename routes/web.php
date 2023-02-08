@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\admin\AdminAuthenticatedSessionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,20 +18,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/admin', function () {
-    return view('home');
-})->middleware(['admin.auth'])->name('adminlogin');
+// Route::get('admin', [AdminAuthenticatedSessionController::class, 'create']);
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-
-// Route::get('/detect', function () {
-
-//     if ($result)
-//         return "Yes, This is Mobile.";
-//     else
-//         return "No, This is not Mobile.";
-// });
 
 require __DIR__ . '/auth.php';

@@ -21,6 +21,6 @@
         </style>
     </head>
     <body>
-        어드민
+        어드민 페이지
     </body>
 </html>

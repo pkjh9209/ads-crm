@@ -11,7 +11,7 @@
 
     </head>
     <body>
-        @include('layouts.navigation')
-        @include('layouts.main')
+        @include('mobile.layouts.navigation')
+        @include('mobile.layouts.main')
     </body>
 </html>
