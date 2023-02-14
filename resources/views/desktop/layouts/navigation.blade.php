@@ -4,20 +4,21 @@
         <div class="">
             <div>
                 <div class="flex">
-                    @foreach ($nav_menu as $nav_menu1)
-                    <ul>
-                        <li>
-                            <a href="">
-                                {{$nav_menu1->me_name}}
+                    @foreach (config('menu.front_menu.deps1') as $key => $menuList)
+                    <ul class="gnb-main-box">
+                        <li class="gnb-main-list">
+                            <a href="{{ $menuList['url']}}">
+                                {{ $menuList['name']}}
                             </a>
-                            {{--2뎁스 메뉴출력 --}}
-                            {{-- <ul>
-                                @foreach ($nav_menu as $nav_menu2[$loop->index])
-                                <li>
-                                    {{$nav_menu2}}
-                                </li>
-                                @endforeach
-                            </ul> --}}
+                            <ul class="gnb-sub-box flex">
+                                @if (is_array($menuListSub = config("menu.front_menu.deps2.$key")))
+                                    @foreach ($menuListSub as $sub)
+                                    <li class="gnb-sub-list">
+                                        <a href="{{$sub['url']}}">{{$sub['name']}}</a>
+                                    </li>
+                                    @endforeach
+                                @endif
+                            </ul>
                         </li>
                     </ul>
                     @endforeach

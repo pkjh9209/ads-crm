@@ -38,6 +38,9 @@ div{
     top: 0;
     position: fixed;
     padding-top: 58px;
-    display: flex;
-    flex-direction: column;
+}
+
+.section-content{
+    padding-left: 240px;
+    padding-top:58px;
 }

@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view($this->agent() . 'admin.home');
+        return view($this->agent() . 'admin.layouts.content');
     }
 }

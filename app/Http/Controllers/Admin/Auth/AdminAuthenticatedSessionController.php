@@ -16,7 +16,7 @@ class AdminAuthenticatedSessionController extends Controller
      */
     public function create()
     {
-        return view($this->agent() . 'admin.login');
+        return view($this->agent() . 'admin.auth.login');
     }
 
     /**

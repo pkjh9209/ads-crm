@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\Auth\AdminAuthenticatedSessionController;
+use \App\Http\Controllers\Admin\BoardManagerController;
 
 
 /*
@@ -23,6 +24,9 @@ Route::prefix('admin')->group(static function () {
         // Reset password
         Route::get('reset-password/{token}', [\App\Http\Controllers\Admin\Auth\NewPasswordController::class, 'create'])->name('admin.password.reset');
         Route::post('reset-password', [\App\Http\Controllers\Admin\Auth\NewPasswordController::class, 'store'])->name('admin.password.update');
+        // board manager content
+        Route::get('con', [BoardManagerController::class, 'index'])->name('admin.board-manager');
+
     });
 
     // Verify email routes

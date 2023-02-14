@@ -1,0 +1,10 @@
+.flex{
+    display: flex;
+}
+/* 네비게이션 */
+.gnb-main-list{
+    padding: 10px;
+}
+.gnb-sub-box{
+    display: none;
+}

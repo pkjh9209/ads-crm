@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\BorderManager;
+class BoardManagerController extends Controller
+{
+
+    public function index()
+    {
+        $sql = BorderManager::get();
+        return view($this->agent().'admin.layouts.content',['boardlist' => $sql]);
+    }
+
+    public function show(Request $request)
+    {
+    }
+}
