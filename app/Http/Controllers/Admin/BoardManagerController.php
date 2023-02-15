@@ -11,10 +11,11 @@ class BoardManagerController extends Controller
     public function index()
     {
         $sql = BorderManager::get();
-        return view($this->agent().'admin.layouts.content',['boardlist' => $sql]);
+        return view($this->agent().'admin.layouts.content',['boardList' => $sql]);
     }
 
     public function show(Request $request)
     {
+
     }
 }

@@ -4,8 +4,8 @@
     
     <ul>
         <li>
-            @foreach($boardlist as $bList)
-            {{$bList['board_subject']}}
+            @foreach($boardList as $boardList)
+            {{$boardList['board_subject']}}
             @endforeach
         </li>
     </ul>

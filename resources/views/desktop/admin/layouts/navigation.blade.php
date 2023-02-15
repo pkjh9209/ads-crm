@@ -1,7 +1,7 @@
 <div class="nav-top shadow">
     <ul>
-        <li>
-            팝성형외과관리자페이지
+        <li class="adm-logo">
+            <img src="{{asset('img/desktop/admin/common/nav_logo.png')}}" alt="">
         </li>
         <li>
 
@@ -12,69 +12,85 @@
     </ul>
 </div>
 <div class="nav-side shadow-right sidenav-light">
-        <div>
-            <h1>
-                메인
-            </h1>
-            <button type="button">
-                
-            </button>
-            <ul>
-                <li>
-                    
-                </li>
-            </ul>
+        <div class="nav-section">
+            <a href="">
+                <h1>메인</h1>
+            </a>
         </div>
-        <div>
+        <div class="nav-section">
             <h1>
                 홈페이지관리
             </h1>
-            <button type="button">
-                
-            </button>
+
             <ul>
                 <li>
-                    회원관리
+                    <a href="">
+                        회원관리
+                    </a>
                 </li>
                 <li>
-                    팝업관리
+                    <a href="">
+                        팝업관리
+                    </a>
                 </li>
                 <li>
-                    게시판관리
+                    <a href="">
+                        게시판관리
+                    </a>
                 </li>
             </ul>
         </div>
-        <div>
+        <div class="nav-section">
             <h1>
-                광고신청자관리
+                상담신청자관리
             </h1>
-            <button type="button">
-                신청자관리
-            </button>
+
             <ul>
                 <li>
-                    광고신청자관리
+                    <a href="">
+                        광고신청자관리
+                    </a>
                 </li>
                 <li>
-                    홈페이지신청자관리
+                    <a href="">
+                        홈페이지신청자관리
+                    </a>
                 </li>
                 <li>
-                    모델신청자관리
+                    <a href="">
+                        모델신청자관리
+                    </a>
                 </li>
             </ul>
         </div>
-        <div>
+        <div class="nav-section">
             <h1>
-                관리자페이지관리
+                광고관리
             </h1>
-            <button type="button">
-                
-            </button>
             <ul>
                 <li>
                     
                 </li>
             </ul>
         </div>
-        
+        <div class="nav-section">
+            <h1>
+                통계
+            </h1>
+            <ul>
+                <li>
+                    
+                </li>
+            </ul>
+        </div>
+        <div class="nav-section">
+            <h1>
+                환경설정
+            </h1>
+            <ul>
+                <li>
+                    
+                </li>
+            </ul>
+        </div>
 </div>

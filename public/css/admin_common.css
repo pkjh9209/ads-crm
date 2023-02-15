@@ -1,12 +1,15 @@
 /* 공통 */
+h1,h2,a,p,li{
+    font-family: 'NanumSquare', sans-serif
+}
 div{
     box-sizing: border-box;
 }
-.sidenav-light {
-    /* background-color: #fff;
-    color: #212832; */
+.sidenav-light {}
+.nav-section a{
+    text-decoration: none !important;
+    color: #000;
 }
-
 /* 네비게이션 */
 
 .shadow{
@@ -37,10 +40,80 @@ div{
     left: 0;
     top: 0;
     position: fixed;
-    padding-top: 58px;
+    padding-top: 90px;
+}
+
+.nav-section{
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.nav-section h1{
+    font-size: 12px;
+    font-weight: 800;
+}
+.nav-section ul{
+    padding-left: 8px;
+    margin: 0;
+}
+.nav-section ul li{
+    padding: 6px;
+    font-size: 14px;
 }
 
 .section-content{
     padding-left: 240px;
-    padding-top:58px;
+    padding-top: 58px;
+    width: 100%;
+    min-height: 100vh;
+    background: #F5F7FA;
+}
+
+.adm-logo{
+    line-height: 58px;
+}
+.adm-logo img{
+    width: 140px;
+    margin-bottom: 3px;
+}
+
+/* 테이블 */
+.board-title{
+    font-size: 18px;
+    padding: 20px 20px 10px 20px;
+    font-weight: 800;
+}
+.board-container{
+    box-sizing: border-box;
+    padding: 20px;
+}
+.board-contents{
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.board-search-contents{
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.board-contents table td{
+    padding: 10px;
+    font-size: 12px;
+    font-family: 'Nanum Barun Gothic';
+    text-align: center;
+}
+
+.board-contents table th{
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    font-family: 'NanumSquare', sans-serif;
+    color: #344767;
+    text-align: center;
+}
+
+.table{
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.02) !important;
 }

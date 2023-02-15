@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BorderManager extends Model
+class AdsMember extends Model
 {
     use HasFactory;
 
-    protected $table = 'bbs_manager';
+    protected $table = 'ads_landing_members';
 }
