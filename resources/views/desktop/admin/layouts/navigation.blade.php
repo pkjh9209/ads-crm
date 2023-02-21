@@ -15,6 +15,13 @@
         <div class="nav-section">
             <a href="">
                 <h1>메인</h1>
+                <ul>
+                    <li>
+                        <a href="">
+                            대쉬보드
+                        </a>
+                    </li>
+                </ul>
             </a>
         </div>
         <div class="nav-section">
@@ -47,7 +54,7 @@
 
             <ul>
                 <li>
-                    <a href="">
+                    <a href="/admin/adsmember">
                         광고신청자관리
                     </a>
                 </li>
@@ -69,7 +76,9 @@
             </h1>
             <ul>
                 <li>
-                    
+                    <a href="/admin/landing">
+                        랜딩페이지광고관리
+                    </a>
                 </li>
             </ul>
         </div>

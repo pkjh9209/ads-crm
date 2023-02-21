@@ -38,16 +38,20 @@ Route::prefix('admin')->group(static function () {
 
     // Authenticated routes
     Route::middleware(['auth:admin', 'verified'])->group(static function () {
+        
         // Confirm password routes
         Route::get('confirm-password', [\App\Http\Controllers\Admin\Auth\ConfirmablePasswordController::class, 'show'])->name('admin.password.confirm');
         Route::post('confirm-password', [\App\Http\Controllers\Admin\Auth\ConfirmablePasswordController::class, 'store']);
+
         // Logout route
         Route::post('logout', [\App\Http\Controllers\Admin\Auth\AdminAuthenticatedSessionController::class, 'destroy'])->name('admin.logout');
+
         // General routes
         Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.index');
         
         // Board manager content
         Route::get('contents', [BoardManagerController::class, 'index'])->name('admin.board-manager');
         Route::get('adsmember', [AdsLandingManagerController::class, 'showMemberList'])->name('admin.member');
+        Route::get('landing', [AdsLandingManagerController::class, 'showLandingList'])->name('admin.landing.list');
     });
 });

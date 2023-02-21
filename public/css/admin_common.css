@@ -97,6 +97,12 @@ div{
     background-color: #fff;
     border-radius: 10px;
 }
+.board-search-contents ul {
+    padding: 20px;
+}
+.board-search-contents dt{
+    font-size: 14px;
+}
 
 .board-contents table td{
     padding: 10px;

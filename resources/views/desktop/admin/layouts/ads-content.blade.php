@@ -86,23 +86,23 @@
                     <td>{{$members['sex']}}</td>
                     {{-- 나이 --}}
                     <td>{{$members['age']}}</td>
-                    {{-- 나이 --}}
+                    {{-- 상담희망시간 --}}
                     <td>{{$members['age']}}</td>
-                    {{-- 나이 --}}
+                    {{-- 신청일 --}}
+                    <td>{{$members['reg_date']}}</td>
+                    {{-- 콜내역 --}}
                     <td>{{$members['age']}}</td>
-                    {{-- 나이 --}}
-                    <td>{{$members['age']}}</td>
-                    {{-- 나이 --}}
-                    <td>{{$members['age']}}</td>
-                    {{-- 나이 --}}
-                    <td>{{$members['age']}}</td>
-                    {{-- 나이 --}}
-                    <td>{{$members['age']}}</td>
-                    {{-- 나이 --}}
-                    <td>{{$members['age']}}</td>
-                    {{-- 나이 --}}
-                    <td>{{$members['age']}}</td>
-                    {{-- 나이 --}}
+                    {{-- 상담내용 --}}
+                    <td>{{$members['last_call_memo']}}</td>
+                    {{-- 특이사항 --}}
+                    <td></td>
+                    {{-- 상담일 --}}
+                    <td></td>
+                    {{-- 예약상태 --}}
+                    <td>{{$members['reserve_status_1']}}<br>{{$members['reserve_date_1']}}</td>
+                    {{-- 상담자지정 --}}
+                    <td>{{$members['last_call_reg_id']}}</td>
+                    {{-- 관리 --}}
                     <td>{{$members['age']}}</td>
                 </tr>
                 @endforeach

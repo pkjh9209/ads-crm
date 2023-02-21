@@ -35,5 +35,6 @@
                 </div>
             </div>
         </div>
+        @yield('contents-script')
     </body>
 </html>
