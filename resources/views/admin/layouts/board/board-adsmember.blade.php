@@ -1,4 +1,4 @@
-@extends('desktop.admin.home')
+@extends('admin.home')
 
 @section('contents')
 <div class="board-container">

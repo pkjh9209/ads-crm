@@ -1,50 +1,50 @@
-@extends('desktop.admin.home')
+@extends('admin.home')
 
 @section('contents')
 <div class="board-container">
     {{-- 검색 --}}
     <div class="board-search-contents shadow">
-        <ul>
-            <li>
+        <form action="{{ route('admin.landing.list') }}">
+            <div class="landing_seaech">
                 <dl>
-                    <dt>키워드검색</dt>
-                    <dd>
+                    <dt>상세검색</dt>
+                    <dd class="seaech_landing">
                         <div>
-                            <select name="" id="">
-                                <option value="">
-
+                            <select name="seaech_type">
+                                <option value="landing_name">
+                                    랜딩이름
                                 </option>
-                                <option value="">
-
-                                </option>
-                                <option value="">
-
+                                <option value="landing_key">
+                                    랜딩KEY
                                 </option>
                             </select>
                         </div>
                         <div>
-                            
+                            <input type="text" name="search_val">
                         </div>
+
                     </dd>
                 </dl>
                 <dl>
-                    <dt>상담일</dt>
-                    <dd></dd>
+                    <dt>광고시작일</dt>
+                    <dd class="seaech_date">
+                        <div><input type="date" name="start_reg_date"></div>
+                        <div>~</div>
+                        <div><input type="date" name="last_reg_date"></div>
+                    </dd>
+                    <div>
+                        <button type="submit">검색하기</button>
+                    </div>
                 </dl>
-                <dl>
-                    <dt>예약일</dt>
-                    <dd></dd>
-                </dl>
-                <dl>
-                    <dt>마케팅활용동의</dt>
-                    <dd></dd>
-                </dl>
-            </li>
-        </ul>
+            </div>
+        </form>
     </div>
 
     <div class="board-contents shadow">
-        <h1 class="board-title">광고신청자</h1>
+        <div>
+            <h1 class="board-title">광고랜딩목록</h1>
+            <a href="">랜딩생성</a>
+        </div>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -70,13 +70,9 @@
                         {{-- 카테고리 --}}
                         <td>{{$landingList->category}}</td>
                         {{--  랜딩key --}}
-                        <td>
-                            <a href="/landing/{{$landingList->landing_key}}" target="_blank">
-                                {{$landingList->landing_key}}
-                            </a>
-                        </td>
+                        <td>{{$landingList->landing_key}}</td>
                         {{-- 랜딩제목 --}}
-                        <td>{{$landingList->landing_name}}</td> 
+                        <td><a href="/landing/{{$landingList->landing_key}}" target="_blank">{{$landingList->landing_name}}</a></td> 
                         {{-- 페이지뷰 --}}
                         <td>{{$landingList->real_hit}}</td>
                         {{-- 신청자 --}}
@@ -91,11 +87,13 @@
                     </tr>
                     @endforeach
                 @else
-                    <p>No Posts Found</p>
+                    <p>게시글이 없습니다.</p>
                 @endif
             </tbody>
         </table>
-        {{ $landingLists->links() }}
+        <div class="pagenation_container">
+            {{ $landingLists->links() }}
+        </div>
     </div>
 
 </div>
@@ -107,12 +105,6 @@
 
 @section('contents-script')
 <script>
-window.onload = function () {
-    document.getElementById('button').onclick = function () {
-        document.getElementById('modal').style.display = "none"
-    };
-};
-
 function modalOpen(key) {
     alert('test');
 }

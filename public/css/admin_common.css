@@ -93,17 +93,6 @@ div{
     border-radius: 10px;
 }
 
-.board-search-contents{
-    background-color: #fff;
-    border-radius: 10px;
-}
-.board-search-contents ul {
-    padding: 20px;
-}
-.board-search-contents dt{
-    font-size: 14px;
-}
-
 .board-contents table td{
     padding: 10px;
     font-size: 12px;
@@ -122,4 +111,61 @@ div{
 
 .table{
     --bs-table-striped-bg: rgba(0, 0, 0, 0.02) !important;
+}
+
+/* 페이지네이션 */
+
+.pagenation_container{
+    width: 1000px;
+}
+
+
+/* 검색 */
+.board-search-contents .landing_seaech{
+
+}
+
+.board-search-contents .landing_seaech .seaech_date{
+    display: flex;
+    margin-bottom: 0px;
+}
+
+.board-search-contents .landing_seaech dl{
+    display: flex;
+    margin-left: 40px;
+    margin-bottom: 0;
+    align-items: center;
+}
+.board-search-contents .landing_seaech dt{
+    margin-right: 10px;
+}
+.board-search-contents .landing_seaech{
+    display: flex;
+    margin-bottom: 0px;
+    justify-content: flex-end;
+}
+.board-search-contents{
+    font-family: 'NanumSquare', sans-serif;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.board-search-contents .seaech_landing{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.board-search-contents ul {
+    padding: 20px;
+}
+
+.board-search-contents dt{
+    font-size: 14px;
+}
+
+.landing_seaech div{
+    margin-left: 10px;
 }

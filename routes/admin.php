@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\Auth\AdminAuthenticatedSessionController;
 use \App\Http\Controllers\Admin\BoardManagerController;
 use \App\Http\Controllers\Admin\AdsLandingManagerController;
+use \App\Http\Controllers\Admin\AdsMemberManagerController;
 
 
 /*
@@ -26,7 +27,7 @@ Route::prefix('admin')->group(static function () {
         Route::get('reset-password/{token}', [\App\Http\Controllers\Admin\Auth\NewPasswordController::class, 'create'])->name('admin.password.reset');
         Route::post('reset-password', [\App\Http\Controllers\Admin\Auth\NewPasswordController::class, 'store'])->name('admin.password.update');
 
-        Route::get('adsmember', [AdsLandingManagerController::class, 'showMemberList'])->name('admin.member');
+        Route::get('adsmember', [AdsMemberManagerController::class, 'show'])->name('admin.member');
 
     });
 
@@ -38,20 +39,28 @@ Route::prefix('admin')->group(static function () {
 
     // Authenticated routes
     Route::middleware(['auth:admin', 'verified'])->group(static function () {
-        
         // Confirm password routes
         Route::get('confirm-password', [\App\Http\Controllers\Admin\Auth\ConfirmablePasswordController::class, 'show'])->name('admin.password.confirm');
         Route::post('confirm-password', [\App\Http\Controllers\Admin\Auth\ConfirmablePasswordController::class, 'store']);
-
         // Logout route
         Route::post('logout', [\App\Http\Controllers\Admin\Auth\AdminAuthenticatedSessionController::class, 'destroy'])->name('admin.logout');
-
         // General routes
         Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.index');
-        
         // Board manager content
         Route::get('contents', [BoardManagerController::class, 'index'])->name('admin.board-manager');
-        Route::get('adsmember', [AdsLandingManagerController::class, 'showMemberList'])->name('admin.member');
-        Route::get('landing', [AdsLandingManagerController::class, 'showLandingList'])->name('admin.landing.list');
+        
+
+        // 신청자 라우터
+        Route::prefix('adsmember')->group(static function () {
+            Route::get('/', [AdsMemberManagerController::class, 'show'])->name('admin.member');  
+        });
+
+        // 랜딩 라우터
+        Route::prefix('landing')->group(static function () {
+            Route::get('/', [AdsLandingManagerController::class, 'show'])->name('admin.landing.list');
+            Route::get('/edit', [AdsLandingManagerController::class, 'edit'])->name('admin.landing.edit');
+            Route::post('/create', [AdsLandingManagerController::class, 'create'])->name('admin.landing.create');
+        });
     });
+
 });

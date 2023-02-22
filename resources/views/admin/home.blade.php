@@ -28,7 +28,7 @@
     </head>
     <body>
         <div class="main-container">
-            @include('desktop.admin.layouts.navigation')
+            @include('admin.layouts.navigation')
             <div class="main-acticle">
                 <div class="section-content">
                     @yield('contents')
